@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Gerador de Sense - Noah</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    color: red;
+    margin-top: 40px;
+}
+
+.container {
+    background: #111;
+    border: 1px solid red;
+    border-radius: 15px;
+    padding: 20px;
+    width: 90%;
+    max-width: 320px;
+    margin: 30px auto;
+}
+
+button {
+    background: red;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.resultado {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.linha {
+    margin: 5px 0;
+}
+</style>
+</head>
+
+<body>
+
+<h1>GERADOR DE SENSE</h1>
+
+<div class="container">
+    <button onclick="gerar()">GERAR SENSE</button>
+
+    <div id="res" class="resultado">
+        Clique no botão...
+    </div>
+</div>
+
+<script>
+function gerar() {
+    function r(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    var texto = ""
+    + "Geral: " + r(80,100) + "<br>"
+    + "Red Dot: " + r(70,100) + "<br>"
+    + "Mira 2x: " + r(60,95) + "<br>"
+    + "Mira 4x: " + r(50,90) + "<br>"
+    + "AWM: " + r(30,80) + "<br>"
+    + "Olhada Livre: " + r(70,100);
+
+    document.getElementById("res").innerHTML = texto;
+}
+</script>
+
+</body>
+</html>
